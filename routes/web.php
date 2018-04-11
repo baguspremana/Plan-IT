@@ -26,6 +26,20 @@ Route::post('/pemilik/register','PemiliklahanController@register')->name('pemili
 Route::get('/coba',function(){
     return view('pemiliklahan.lahan.lahan');
 });
+Route::get('/admin', function () {
+    return view('admin.dashboard');
+});
+Route::get('/pemilik/dashboard', function () {
+    return view('pemiliklahan.lahan.dashboard');
+});
+
+Route::get('/login', function () {
+    return view('pemiliklahan.login');
+});
+
+Route::get('/index', function () {
+    return view('index');
+});
 Route::group(['prefix'=>'pemilik','middleware'=> ['auth:web_pemiliks'] ],function(){
 
     //Route::patch('lahan/hapus/{lahan}','KendaraanController@hapus')->name('kendaraan.hapus');
